@@ -1,7 +1,3 @@
-// Name
-// Semester
-// Professor
-// Grade
 const mongoose = require('mongoose');
 
 const CourseSchema = new mongoose.Schema(
