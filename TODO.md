@@ -5,6 +5,7 @@
 - [x] Add Asynchronous Submission to Client Server
 - [ ] Handle Client Server Errors
 - [x] Use React Hooks for State Management
+- [ ] Session Auto-Refresher
 
 ## [app/server](./app/server/)
 
@@ -22,3 +23,5 @@
 - [x] Create Student Model
 - [x] Accept POST Request from Webhook
 - [x] Return Relevant Information from Webhook Request
+- [ ] Create Update Routes
+- [ ] Create Delete Routes
