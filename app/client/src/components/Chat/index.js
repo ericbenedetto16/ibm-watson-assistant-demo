@@ -38,9 +38,8 @@ export const Chat = () => {
                             <ChatMessage
                                 name={msg.name}
                                 text={msg.text}
-                                time={it.toString()}
+                                time={msg.time}
                                 key={it}
-                                // Alt Must Come from Client Side
                                 alt={msg.name !== 'User'}
                             />
                         ))}
@@ -53,10 +52,11 @@ export const Chat = () => {
                         setMessage(e.target.value);
                     }}
                     onSubmit={async () => {
-                        enqueueMessage({ text: user_message, name: 'User' });
+                        const d = new Date().toLocaleTimeString('en-US',{hour12:false,hour:'2-digit',minute:'2-digit'})
+                        enqueueMessage({ text: user_message, time: d, name: 'User' });
                         const msgs = await sendMessage({ user_message });
                         msgs.map(({ text }) => {
-                            enqueueMessage({ text, name: 'CUNY Assistant' });
+                            enqueueMessage({ text, time: d, name: 'CUNY Assistant' });
                         });
                     }}
                 />
